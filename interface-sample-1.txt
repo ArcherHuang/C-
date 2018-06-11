@@ -1,0 +1,30 @@
+using System;
+using System.IO;
+
+namespace helloworld
+{
+    public interface interfaceTest
+    {
+        string whoami();
+    }
+
+    class ClassA : interfaceTest
+    {
+        public string whoami()
+        {
+            return "I am Class A.";
+        }
+
+    }
+
+    class Program
+    {
+        static void Main()
+        {
+            interfaceTest ClassAInstace = new ClassA();
+            Console.WriteLine(ClassAInstace.whoami());
+
+            Console.ReadKey(true);
+        }
+    }
+}

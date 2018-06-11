@@ -1,0 +1,53 @@
+using System;
+using System.IO;
+
+namespace helloworld
+{
+    abstract class Animal
+    {
+        public abstract string Barking();
+    }
+
+    class Dog : Animal
+    {
+        public override string Barking()
+        {
+            return "汪汪汪";
+        }
+
+    }
+
+    class Cat : Animal
+    {
+        public override string Barking()
+        {
+            return "喵喵喵";
+        }
+
+    }
+
+    class Bird : Animal
+    {
+        public override string Barking()
+        {
+            return "吱吱吱";
+        }
+
+    }
+
+    class Program
+    {
+        static void Main()
+        {
+            Animal baseInstace = new Dog();
+            Console.WriteLine(baseInstace.Barking());
+
+            baseInstace = new Cat();
+            Console.WriteLine(baseInstace.Barking());
+
+            baseInstace = new Bird();
+            Console.WriteLine(baseInstace.Barking());
+            Console.ReadKey(true);
+        }
+    }
+}

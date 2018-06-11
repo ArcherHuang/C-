@@ -1,0 +1,33 @@
+using System;
+using System.IO;
+
+namespace helloworld
+{
+    class Base
+    {
+        public string whoami()
+        {
+            return "I am Base Class.";
+        }
+    }
+
+    class Child : Base
+    {
+        public string whoami()
+        {
+            return "I am Child Class.";
+        }
+
+    }
+
+    class Program
+    {
+        static void Main()
+        {
+            Base baseInstace = new Child();
+            Console.WriteLine(baseInstace.whoami());
+
+            Console.ReadKey(true);
+        }
+    }
+}
