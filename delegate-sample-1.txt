@@ -1,0 +1,40 @@
+using System;
+using System.IO;
+
+namespace helloworld
+{
+    // 2. 宣告 Delegate 型別
+    public delegate void DelegateMethodA(string Namee);
+
+    class ClassA
+    {
+        // 1. 宣告要 Delegate 的函式
+        public void MethodA1(string Name)
+        {
+            Console.WriteLine($"Hello {Name}, My Name is Method A 1");
+        }
+        public void MethodA2(string Name)
+        {
+            Console.WriteLine($"Hello {Name}, My Name is Method A 2\n");
+        }
+    }
+
+    class Program
+    {
+        static void Main()
+        {
+            ClassA ClassAInstace = new ClassA();
+
+            // 3. 實體化 Delegate
+            DelegateMethodA delegateTest = ClassAInstace.MethodA1;
+            delegateTest += ClassAInstace.MethodA2;
+
+            // 4. 執行 Delegate 函式
+            delegateTest("aaa");
+            delegateTest.Invoke("bbb");
+            ClassAInstace.MethodA1("ccc");
+
+            Console.ReadKey(true);
+        }
+    }
+}
