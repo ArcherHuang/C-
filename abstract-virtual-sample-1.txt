@@ -1,0 +1,48 @@
+using System;
+using System.IO;
+
+namespace helloworld
+{
+     class Base1
+    {
+        virtual public void test1()
+        {
+            Console.WriteLine("I am Base Class");
+        }
+    }
+
+    class Child1 : Base1
+    {
+        //public override void test1()
+        //{
+            //Console.WriteLine("I am Child Class");
+        //}
+    }
+
+    abstract class Base2
+    {
+        abstract public void test2();
+    }
+
+    class Child2 : Base2
+    {
+        public override void test2()
+        {
+            Console.WriteLine("I am Child Class - implement abstract Method");
+        }
+    }
+
+        class Program
+    {
+        static void Main()
+        {
+            Child1 base1Instace = new Child1();
+            base1Instace.test1();
+
+            Child2 base2Instace = new Child2();
+            base2Instace.test2();
+
+            Console.ReadKey(true);
+        }
+    }
+}
