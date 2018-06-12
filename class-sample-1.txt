@@ -1,0 +1,38 @@
+using System;
+using System.IO;
+
+namespace helloworld
+{
+     class Base1
+    {
+        public string Name { get; set; }
+
+        public Base1(string name)
+        {
+            Name = name;
+        }
+
+        //public override string ToString()
+        //{
+            //return Name;
+        //}
+    }
+
+        class Program
+    {
+        static void Main()
+        {
+            Base1 base1Instace = new Base1("Eason");
+            Console.WriteLine($"Hello {base1Instace.Name}");
+            Console.WriteLine($"Hello {base1Instace.ToString()}");
+
+            base1Instace.Name = "Archer";
+            Console.WriteLine($"Hello {base1Instace.Name}");
+
+            base1Instace.Name = "Mos";
+            Console.WriteLine($"Hello {base1Instace.Name}");
+
+            Console.ReadKey(true);
+        }
+    }
+}
